@@ -1,0 +1,46 @@
+/*  CAROUSEL
+---------------------------------------------------*/
+
+    #carousel {
+        overflow: hidden;
+        width: 100%;
+    }
+    .carousel__inner {
+        position: relative;
+        overflow: hidden;
+        width: 200%;
+    }
+    .carousel__item {
+        position: relative;
+        float: left;
+        width: 50%;
+         left: 0;
+         @include transition( all 0.5s linear)
+    }
+    .carousel__item--animate {
+        left: -50%;
+    }
+    .carousel-prev,
+    .carousel-next {
+        position: absolute;
+        z-index: 1005;
+        border: 0;
+        background-color: $black-light;
+        color: $white;
+        top: 45%;
+        font-size: px2em(25px);
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+    .carousel-prev {
+        left: 0;
+    }
+    .carousel-next {
+        right: 50%;
+        &.disabled {
+            opacity: .3;
+            cursor: normal;
+        }
+    }

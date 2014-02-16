@@ -1,0 +1,189 @@
+/*  FORM
+---------------------------------------------------*/
+
+    // Settings
+    // --------------------------------------------
+        $form_placholder--color: $grey;
+        $form_border--color: lighten($black, 85%);
+        $form_focus--color: lighten($black, 50%);
+        $form_border-radius: 0;
+        $form_mandatoryField--color: $color_alert;
+
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="color"] {
+            padding: 0.65em 1.2em;
+            display: inline-block;
+            border: 1px solid $form_border--color;
+            @include border-radius($form_border-radius);
+            @include transition( border 0.3s linear );
+            -webkit-font-smoothing: antialiased;
+            -webkit-transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+            -moz-transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+            -o-transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+            -ms-transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+            transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+            @include input-placeholder { color: $form_placholder--color; }
+            /* Focus state */
+            &:focus {
+                outline: 0;
+                outline: thin dotted \9; /* IE6-9 */
+                border-color: #129FEA;
+                border-color: darken($form_border--color, 5%);
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                -webkit-box-shadow: 0.3em 0em 0em 0em rgba($form_focus--color, 0.8) inset;
+                -moz-box-shadow: 0.3em 0em 0em 0em rgba($form_focus--color, 0.8) inset;
+                box-shadow: 0.3em 0em 0em 0em rgba($form_focus--color, 0.8) inset;
+            }
+
+            &.no-focus:focus {
+              outline: 0;
+              border: none;
+              -webkit-box-shadow: none;
+              -moz-box-shadow: none;
+              box-shadow: none;
+            }
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-size: 100%;
+            margin: 0;
+            vertical-align: baseline;
+        }
+
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            -webkit-appearance: button;
+            cursor: pointer;
+            border: none;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        label {
+            cursor: pointer;
+            sup {
+                color: $form_mandatoryField--color;
+            }
+        }
+
+        // Reset default cursor for disabled elements.
+        // ------------------------------------------------------------------------------
+        button[disabled],
+        input[disabled] {
+            cursor: default;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        input[type="search"] {
+            -webkit-appearance: textfield;
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+
+
+        // Removes inner padding and search cancel button in Safari 5 and Chrome on OS X.
+        // ------------------------------------------------------------------------------
+        input[type="search"] {
+            &::-webkit-search-decoration,
+            &::-webkit-search-cancel-button,
+            &::-webkit-search-results-button,
+            &::-webkit-search-results-decoration {
+                  -webkit-appearance: none;
+            }
+        }
+
+        // Removes default vertical scrollbar in IE 6/7/8/9.
+        // Improves readability and alignment in all browsers.
+        // ------------------------------------------------------------------------------
+        textarea {
+            overflow: auto;
+            vertical-align: top;
+            min-height: 5em;
+            resize: vertical;
+            font-size: inherit;
+            font-family: inherit
+        }
+
+        // Remove list-style-type on list form
+        // ------------------------------------------------------------------------------
+        .form_fields{
+            list-style:none;
+            padding-left: 0;
+            margin:0;
+            font-size: 0.8em;
+            > .form_fields__group {
+                margin-bottom: .7em;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .form_fields_aligned {
+            label {
+                display: inline-block;
+                width: 10em;
+                vertical-align: middle;
+                margin: 0 1em 0 0;
+            }
+            input {
+                vertical-align: middle;
+            }
+        }
+        .form_fields__actions {
+            margin: 1.5em 0 0 11.4em;
+        }
+
+        // Stacked Form
+        // ------------------------------------------------------------------------------
+        .form_fields_stacked {
+            label {
+                display: block;
+                margin: 0 1em 0 0;
+            }
+
+            input {
+                display: block;
+            }
+            input[type="checkbox"],
+            input[type="radio"] {
+                display: inline-block;
+            }
+            .form_fields__actions {
+                margin: 1.5em 0 0 0em;
+            }
+        }
+
+        // Error Form
+        // ------------------------------------------------------------------------------
+        .form_fields__group--error {
+            color: red;
+        }

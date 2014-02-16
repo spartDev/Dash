@@ -1,0 +1,99 @@
+/*  TYPOGRAPHY
+---------------------------------------------------*/
+
+    *,
+    *:before,
+    *:after {
+        -webkit-font-smoothing:antialiased;
+        font-smoothing:antialiased;
+        text-rendering:optimizeLegibility;
+        @include box-sizing(border-box);
+    }
+
+    html {
+        min-height:100%;
+        font-size: 62.5%; // Set baseline font size to 10px, This is used as a baseline for rem (root ems) values
+    }
+
+    body {
+        font-family: $base-font-family;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.6em; // Bump font-size back up to 16px
+        line-height: 1.4;
+        background: $color-body_background;
+        color: $color-body_text;
+    }
+
+    // Get rid of gap under images by making them display: inline-block; by default
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    ul, ol {
+        margin: 0;
+        padding: 0;
+    }
+
+    // Links
+    // -----------------------------------------------------------
+
+        a {
+            // Compass Helper Function
+            // link-colors($normal, $hover, $active, $visited, $focus)
+            @include link-colors($global-link-color, $global-link-color-hover, $global-link-color-hover, $global-link-color, $global-link-color);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    // Headings
+    // -----------------------------------------------------------
+
+        #{headings()} {
+            font-family: $header-font;
+            font-style: normal;
+            font-weight: $header-font-weight;
+            margin: 0;
+        }
+        h1,
+        .h1 {
+            @include font-size($h1-size);
+        }
+        h2,
+        .h2 {
+            @include font-size($h2-size);
+        }
+        h3,
+        .h3 {
+            @include font-size($h3-size);;
+        }
+        h4,
+        .h4 {
+            @include font-size($h4-size);
+        }
+        h5,
+        .h5 {
+            @include font-size($h5-size);
+        }
+        h6,
+        .h6 {
+            @include font-size($h6-size);
+        }
+
+    // Font-face
+    // -----------------------------------------------------------
+
+        /* Include your font face here */
+
+
+    // Code
+    // -----------------------------------------------------------
+
+        pre,
+        code {
+            font-family: Consolas, Monaco, "Lucida Console", Monospace;
+        }

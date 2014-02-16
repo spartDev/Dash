@@ -1,0 +1,76 @@
+/*  HELPERS
+---------------------------------------------------*/
+
+    // Text helpers
+    // -----------------------------------------------------------
+
+        .text--left { text-align: left; }
+        .text--right {text-align: right; }
+        .text--center { text-align: center; }
+        .text--justify { text-align: justify; }
+        .text--underline { text-decoration: underline; }
+
+        .caps { text-transform: uppercase; }
+
+        .muted { @include opacity(.3); }
+
+
+    // List style helpers
+    // -----------------------------------------------------------
+        .list--unset                 { list-style: none; padding-left: 0; }
+        .list--numbers            { list-style: decimal; }
+        .list--bullets               { list-style: disc; }
+
+
+    // States helpers
+    // -----------------------------------------------------------
+
+        // Hide from both screenreaders and browsers: h5bp.com/u
+        .is-hidden {
+                display: none !important;
+                visibility: hidden !important;
+        }
+
+        // Hide only visually, but have it available for screenreaders: h5bp.com/v
+        .is-visuallyHidden {
+                border: 0;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+
+                // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+                &.focusable:active,
+                &.focusable:focus {
+                        clip: auto;
+                        height: auto;
+                        margin: 0;
+                        overflow: visible;
+                        position: static;
+                        width: auto;
+                }
+        }
+
+        // Hide visually and from screenreaders, but maintain layout
+        .is-invisible { visibility: hidden; }
+
+
+    // Images responsive
+    // -----------------------------------------------------------
+
+        .img-resp {
+            width: 100% !important;
+            height: auto;
+            display: inline-block;
+        }
+
+    // Disable Hover on Scroll Class
+    // http://www.thecssninja.com/javascript/pointer-events-60fps
+    // -----------------------------------------------------------
+        .disable-hover,
+        .disable-hover * {
+            pointer-events: none !important;
+        }

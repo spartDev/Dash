@@ -1,0 +1,47 @@
+/*  MAIN STYLESHEET
+ *
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
+------------------------------------------------------------------------------*/
+
+    // Compasss
+    // ------------------------------------------------------------------------------
+        @import "compass";
+
+    // Settings
+    // ------------------------------------------------------------------------------
+        @import "settings";
+
+    // Base
+    // ------------------------------------------------------------------------------
+        @import "base/functions/pixel-convertion";
+        @import "base/functions/strip-units";
+        @import "base/mixins/clearfix";
+        @import "base/mixins/font-face";
+        @import "base/mixins/font-size";
+        @import "base/mixins/placeholder";
+        @import "base/mixins/retina";
+        @import "base/normalize";
+        @import "base/typography";
+        @import "base/helpers";
+
+    // Components
+    // ------------------------------------------------------------------------------
+        @import "components/grid";
+        @import "components/list";
+        @import "components/circle";
+        @import "components/icons";
+        @import "components/carousel";
+
+    // Partials
+    // ------------------------------------------------------------------------------
+        @import "partials/master_head";
+        @import "partials/main-navigation";
+        @import "partials/main-content";
+        @import "partials/dash_module";
+
+    // Pages
+    // ------------------------------------------------------------------------------
+        @import "page/page-abstract";
+        @import "page/page-info";

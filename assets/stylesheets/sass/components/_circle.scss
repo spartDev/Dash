@@ -1,0 +1,177 @@
+/*  CIRCLE
+---------------------------------------------------*/
+
+    // Settings
+    // -----------------------------------------------------------
+        $circle-progress: 8; // 0 - 100
+
+        // Base colors
+        $circle-color-active: #c0392b;
+        $circle-color-inactive: #eee;
+        $circle-color-bg: $white;
+        $circle-color-font: #eee;
+        $circle-separator-color: rgba(236, 240, 241, .4);
+
+        //Decli colors
+        $normal-circle-color-active: #f1c40f;
+        $good-circle-color-active:#2ecc71;
+        $bad-circle-color-active:#c0392b;
+
+        //Decli Progress
+        $bad-circle-progress: 40;
+        $normal-circle-progress: 50; // 0 - 100
+        $good-circle-progress: 35; // 0 - 100
+
+
+
+
+    // Base Circle
+    // -----------------------------------------------------------
+        .circles__item + .circles__item {
+            border-left: 1px solid darken($circle-separator-color, 10%);
+        }
+        .circle__item__title {
+            margin-bottom: px2em(10px);
+        }
+        .circle__item__indicator {
+            margin-top: px2em(10px);
+            font-size: px2em(20px);
+        }
+        .circle__item__progress {
+            position: relative;
+            width: px2em(161px);
+            height: px2em(161px);
+            background: $circle-color-inactive;
+            border-radius: 50%;
+            border: 2px solid $circle-color-inactive;
+            //box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            //border: px2em(2px) solid $circle-color-bg;
+            overflow: hidden;
+                &:before {
+                content: $circle-progress + "%";
+                text-align: center;
+                line-height: 144px;
+                font-size: px2em(20px);
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 700;
+                color: $circle-color-active;
+                width: 90%;
+                height: 90%;
+                background: $circle-color-bg;
+                position: absolute;
+                border-radius: 50%;
+                left: 5%;
+                top: 5%;
+                z-index: 1000;
+            }
+        }
+
+        .circle__item__progress__hide {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            background: $circle-color-inactive;
+            z-index: 200;
+            -webkit-transform-origin: left center;
+            $deg: (360 / 100) * $circle-progress;
+            @include transform(rotate($deg + deg));
+        }
+
+        .circle__item__progress__active,
+        .circle__item__progress__active2 {
+            width: 50%;
+            height: 100%;
+            background: $circle-color-active;
+            position: absolute;
+                @if $circle-progress > 50 {
+                  z-index: 300
+                }
+            left: 50%;
+            top: 0;
+        }
+
+        @if $circle-progress > 50 {
+            .circle__item__progress__active2 {
+             -webkit-transform-origin: left center;
+              $deg: (360 / 100) * ($circle-progress - 50);
+            @include transform(rotate($deg + deg));
+            }
+        }
+
+
+    // Circle Decli
+    // -----------------------------------------------------------
+        .circle__item__progress--normal {
+            &:before {
+                content: $normal-circle-progress + "%";
+                color: $normal-circle-color-active;
+            }
+            .circle__item__progress__hide {
+                $deg: (360 / 100) * $normal-circle-progress;
+                @include transform(rotate($deg + deg));
+            }
+            .circle__item__progress__active,
+            .circle__item__progress__active2 {
+                background: $normal-circle-color-active;
+                @if $normal-circle-progress > 50 {
+                  z-index: 300
+                }
+            }
+            @if $normal-circle-progress > 50 {
+                .circle__item__progress__active2 {
+                      $deg: (360 / 100) * ($normal-circle-progress - 50);
+                    @include transform(rotate($deg + deg));
+                }
+            }
+        }
+
+        .circle__item__progress--good {
+            &:before {
+                content: $good-circle-progress + "%";
+                color: $good-circle-color-active;
+            }
+            .circle__item__progress__hide {
+                $deg: (360 / 100) * $good-circle-progress;
+                @include transform(rotate($deg + deg));
+            }
+            .circle__item__progress__active,
+            .circle__item__progress__active2 {
+                background: $good-circle-color-active;
+                @if $good-circle-progress > 50 {
+                  z-index: 300
+                }
+            }
+             @if $good-circle-progress > 50 {
+                .circle__item__progress__active2 {
+                      $deg: (360 / 100) * ($good-circle-progress - 50);
+                    @include transform(rotate($deg + deg));
+                }
+            }
+        }
+
+        .circle__item__progress--bad {
+            &:before {
+                content: $bad-circle-progress + "%";
+                color: $bad-circle-color-active;
+            }
+            .circle__item__progress__hide {
+                $deg: (360 / 100) * $bad-circle-progress;
+                @include transform(rotate($deg + deg));
+            }
+            .circle__item__progress__active,
+            .circle__item__progress__active2 {
+                background: $bad-circle-color-active;
+                @if $bad-circle-progress > 50 {
+                  z-index: 300
+                }
+            }
+            @if $bad-circle-progress > 50 {
+                .circle__item__progress__active2 {
+                      $deg: (360 / 100) * ($bad-circle-progress - 50);
+                    @include transform(rotate($deg + deg));
+                }
+            }
+        }

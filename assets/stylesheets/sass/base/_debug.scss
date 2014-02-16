@@ -1,0 +1,29 @@
+/*  DEBUG
+---------------------------------------------------*/
+
+    // Breakpoints debug
+    // ----------------------------------------
+        @if $breakpoints-debug {
+          body:before {
+                  background-color: #67c68f;
+                  border: 1px solid darken(#67c68f, 10%);
+                  color: darken(#67c68f, 30%);
+                  font: small-caption;
+                  font-family: consolas;
+                  padding: 8px;
+                  position: absolute;
+                  margin: 0 auto;
+                  max-width: 300px;
+
+                  text-align: center;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  z-index: 100;
+                  @each $breakpoint in $breakpoints-map {
+                    @include mediaQuery(nth($breakpoint, 1)) {
+                      content: "Current breakpoint : #{nth($breakpoint, 1)} ≥ #{nth($breakpoint, 2)} (#{px2em(nth($breakpoint, 2))})";
+                    }
+                  }
+          }
+        }

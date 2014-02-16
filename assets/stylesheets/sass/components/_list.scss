@@ -1,0 +1,30 @@
+/*  LIST
+---------------------------------------------------*/
+
+
+    // List constructor
+    // -----------------------------------------------------------
+
+        .list {
+            @include clearfix;
+            @extend .list--unset;
+            letter-spacing: -0.31em; // Remove whitespace between child elements when using `inline-block`
+            > li {
+                letter-spacing: normal; // Reset whitespace hack
+                display: inline-block;
+                padding: 0 0.5rem;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .list--stacked {
+            @include clearfix;
+            @extend .list--unset;
+                > li {
+                    display: block;
+                    padding: 0;
+                    margin-bottom: 5px;
+                }
+            }

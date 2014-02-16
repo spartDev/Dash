@@ -1,0 +1,7 @@
+// Font-size Rem with pixel fallback mixin
+// -----------------------------------------------------------
+
+        @mixin font-size($size) {
+          font-size: $size;
+          font-size: calculateRem($size);
+        }

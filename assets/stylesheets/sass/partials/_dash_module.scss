@@ -1,0 +1,16 @@
+/*  DASH MODULE
+---------------------------------------------------*/
+
+    // Settings
+    // -----------------------------------------------------------
+        $module-base-color: rgba(236, 240, 241, .4);
+
+    // Base module
+    // -----------------------------------------------------------
+        .dash_module__header__title__separator {
+            color: darken($module-base-color, 10%);
+        }
+        .dash_module__main-content {
+            background-color: $module-base-color;
+            padding: px2em(20px) px2em(50px);
+        }

@@ -1,0 +1,31 @@
+/*  MAIN NAVIGATION
+---------------------------------------------------*/
+
+    .main_navigation {
+        height: 100%;
+        line-height: 68px;
+    }
+    .main_navigation__item {
+        border-left: 1px solid $color_navigation_border;
+        width: 13%;
+        text-align: center;
+        @include transition( all 0.3s ease-in-out);
+        &:hover {
+            background: $color_navigation_border;
+        }
+        &:last-child {
+            border-right: 1px solid $color_navigation_border;
+        }
+        a {
+            font-family: $nav-font;
+            font-weight: 400;
+            display: block;
+            color: $white;
+            text-decoration: none;
+        }
+    }
+
+    .active_menu {
+        background: $color_navigation_border;
+        border-bottom: 2px solid #ecf0f1;
+    }

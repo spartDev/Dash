@@ -1,0 +1,114 @@
+/*  SETTINGS
+---------------------------------------------------*/
+
+
+    // Active debug
+    // ----------------------------------------
+        $debug: false;
+
+
+    // Container
+    // ----------------------------------------
+        $container-max-width: 1024px;
+
+
+    // Typo
+    // ----------------------------------------
+
+        $em-base: 16px !default;
+
+        $base-font-family:  sans-serif!default;
+
+        $h1-size:           55px!default;
+        $h2-size:           30px!default;
+        $h3-size:           24px!default;
+        $h4-size:           20px!default;
+        $h5-size:           16px!default;
+        $h6-size:           14px!default;
+
+        $header-font: 'Open Sans', sans-serif;
+        $header-font-weight: 300!default;
+
+        $base-font:  'Open Sans', sans-serif;
+
+        $nav-font: 'Open Sans', sans-serif;
+
+
+    // Colors Palette
+    // ----------------------------------------
+
+        $white: #FFF!default;
+        $black: #000!default;
+        $black-light: #4f4f4f!default;
+        $grey: #c6c7c9!default;
+        $grey-light: #f9f9f9!default;
+        $maroon: #4A433B!default;
+
+        $color-body_background: $white;
+        $color-body_text: $black-light;
+
+        $color_success: #67A54B; // green
+        $color_alert: #B22727;  // red
+        $color_info: #3B5998; // blue
+
+        $color_navigation_border: #333;
+
+        $global-link-color: blue;
+        $global-link-color-hover: cyan;
+
+
+    // CSSWizardry Grids
+    // ----------------------------------------
+
+        // If you are building a non-responsive site but would still like to use
+        // csswizardry-grids, set this to ‘false’:
+        $responsive: true;
+
+        // Is this build mobile first? Setting to ‘true’ means that all grids will be
+        // 100% width if you do not apply a more specific class to them.
+        $mobile-first: true;
+
+        // Set the spacing between your grid items.
+        $gutter: 24px;
+
+        // Would you like Sass’ silent classes, or regular CSS classes?
+        $use-silent-classes: false;
+
+        // Would you like push and pull classes enabled?
+        $push: true;
+        $pull: true;
+
+        // Using `inline-block` means that the grid items need their whitespace removing
+        // in order for them to work correctly. Set the following to true if you are
+        // going to achieve this by manually removing/commenting out any whitespace in
+        // your HTML yourself.
+
+        // Setting this to false invokes a hack which cannot always be guaranteed,
+        // please see the following for more detail:
+
+        // github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+        // github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+        $use-markup-fix: true;
+
+
+        // Define your breakpoints. The first value is the prefix that shall be used for
+        // your classes (e.g. `.palm--one-half`), the second value is the media query
+        // that the breakpoint fires at.
+        $breakpoints: (
+            'palm' '(max-width: 640px)',
+            'lap' '(min-width: 641px) and (max-width: 768px)',
+            'portable' '(max-width: 1023px)',
+            'desk' '(min-width: 1024px)'
+        );
+
+        // Define which namespaced breakpoints you would like to generate for each of
+        // widths, push and pull. This is handy if you only need pull on, say, desk, or
+        // you only need a new width breakpoint at mobile sizes. It allows you to only
+        // compile as much CSS as you need. All are turned on by default, but you can
+        // add and remove breakpoints at will.
+
+        // Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+        // have been set to ‘true’.
+        $breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk');
+        $breakpoint-has-push:   ('palm', 'lap', 'portable', 'desk');
+        $breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk');

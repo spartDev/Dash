@@ -1,0 +1,22 @@
+// PIXEL CONVERTION
+// -----------------------------------------------------------
+
+    // Convert pixels to rems
+    // -----------------------------------------------------------
+
+        @function calculateRem($size) {
+            $remSize: $size / 16px;
+            @return $remSize * 1rem;
+        }
+
+    // Convert pixels to ems
+    // ex: px2em(12px) if the parent is 16px or px2em(12px, 30px) if the parent is 30px;
+    // -----------------------------------------------------------
+
+        @function px2em($pxValue, $baseValue: $em-base){
+            $value: strip-unit($pxValue) / strip-unit($baseValue) * 1em;
+            @if ($value == 0em) {
+                $value: 0;
+            }
+            @return $value;
+        }

@@ -1,0 +1,16 @@
+/*  MASTER HEAD
+---------------------------------------------------*/
+
+    #master-head {
+        height: px2em(70px);
+        background-color:  $black;
+        box-shadow: 0px 0px 3px $black-light;
+        padding: 0 px2em(20px) 0 px2em(18px);
+    }
+    .app-title,
+    .app-subtitle {
+        color: #FFF;
+    }
+    .app-subtitle {
+        line-height: 1px;
+    }
